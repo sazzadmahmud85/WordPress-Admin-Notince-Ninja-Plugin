@@ -1,0 +1,6 @@
+.notice-custom, div.updated{
+    border-left-color: rgb(137, 5, 5) !important;
+    border-left: 14px solid #fff;
+    padding-bottom: 20px;
+}
+
