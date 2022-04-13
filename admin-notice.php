@@ -12,13 +12,16 @@ Domain Path: /languages/
 */
 
 function nn_admin_notice(){
+    global $pagenow;
     if(!(isset($_COOKIE['nn-close']) && $_COOKIE['nn-close'] == 1)){
-        ?>
-        <div id="noticeninja" class="notice notice-success is-dismissible">
-            <h1>Here is a Heading</h1>
-            <p>Hey, here is some information for you.</p>
-        </div>
-        <?php
+        if(in_array($pagenow, ['index.php', 'themes.php'])){
+            ?>
+            <div id="noticeninja" class="notice notice-success is-dismissible">
+                <h1>Here is a Heading</h1>
+                <p>Hey, here is some information for you.</p>
+            </div>
+            <?php
+        }
     }
 }
 add_action('admin_notices', 'nn_admin_notice');
